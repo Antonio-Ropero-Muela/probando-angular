@@ -1,0 +1,11 @@
+{
+  "name": "angular",
+  "version": "0.0.1",
+  "description": "desarrollo proyecto angular",
+  "dependencies": {
+    "angular": "~1.4.4",
+    "angular-resource": "~1.4.4",
+    "angular-route": "~1.4.4",
+    "bootstrap": "~3.3.5"
+  }
+}
