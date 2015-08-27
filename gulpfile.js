@@ -9,6 +9,7 @@ var gulp = require('gulp'),
     inject    = require('gulp-inject'),
     wiredep   = require('wiredep').stream,
     historyApiFallback = require('connect-history-api-fallback');
+var templateCache = require('gulp-angular-templatecache');
 // Servidor web de desarrollo
 gulp.task('server', function() {
     connect.server({

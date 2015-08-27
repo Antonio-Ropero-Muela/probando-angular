@@ -3,14 +3,15 @@
 
     angular.module('blog.controllers', ['blog.services']);
 
-    function PostListCtrl (Post) {
+    function PostListCtrl(Post) {
+      console.log(Post.query());
         this.posts = Post.query();
-    }
+    };
 
-    function PostDetailCtrl ($routeParams, Post, Comment) {
+    function PostDetailCtrl($routeParams, Post, Comment) {
         this.post = {};
         this.comments = {};
-        this.user = {}
+        this.user = {};
 
         var self = this; // Para guardar la referencia
 
@@ -20,21 +21,18 @@
           function (data) {
             self.post = data[0];
             self.user = User.query({ id: self.user.userId });
-          }
-          //Error
-          function (error) {
-            console.log(error);
-          }
-        );
-        this.comments = Comment.query({ postId: $routeParams.postId });
-    }
+          });
 
-    function PostCreateCtrl (Post) {
+        this.comments = Comment.query({ postId: $routeParams.postId });
+
+    };
+
+    function PostCreateCtrl(Post) {
         var self = this;
         this.create = function() {
           Post.save(self.post);
         };
-    }
+    };
 
 
 })();
